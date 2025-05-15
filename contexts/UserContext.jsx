@@ -26,10 +26,11 @@ export function UserProvider({ children }) {
     }
   }
 
-  async function logout(email, password) {
+  async function logout() {
     try {
       await account.deleteSession("current");
       setUser(null);
+      console.log("Logout successful");
     } catch (error) {
       throw Error(error.message);
     }
